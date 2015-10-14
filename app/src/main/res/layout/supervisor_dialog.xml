@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/popup">
+
+    <TextView
+        android:id="@+id/supervisorTextV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:text="Adrian Gomez"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/TelSupTextV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/supervisorTextV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="19*118*72652"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/cuadrillaTextV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TelSupTextV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Cuadrilla : 34"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/horaInicioTextV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cuadrillaTextV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="2013-12-20 16:47:00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/versionApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horaInicioTextV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/supervisorNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Supervisor"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textColorLink="@color/white" />
+
+    <ImageButton
+        android:id="@+id/cerrarSupDialogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/btncerrar" />
+
+</RelativeLayout>

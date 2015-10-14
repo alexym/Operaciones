@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.agu.operaciones.TicketListActivity">
+    <item android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+    <!--<item android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView" />-->
+
+    <item android:id="@+id/menu_supervisor"
+        android:icon="@drawable/icosup"
+        android:title="@string/tituloMenu1" />
+    <item android:id="@+id/menu_actualizar"
+        android:icon="@drawable/icodesc"
+        android:title="@string/tituloMenu2" />
+    <item android:id="@+id/menu_sincronizar"
+        android:icon="@drawable/icodesc"
+        android:title="@string/tituloMenu3" />
+    <item android:id="@+id/menu_salir"
+        android:icon="@drawable/icosalir"
+        android:title="@string/tituloMenu4" />
+</menu>
