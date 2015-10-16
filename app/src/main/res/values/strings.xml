@@ -51,6 +51,11 @@
     <string name="action_search">Search</string>
     <string name="action_compose">Componer</string>
 
+    <string name="estado_operacion">Estado Operación</string>
+    <string name="materiales">Materiales</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="unidad_medida">Unidad de Medida</string>
+
     <string name="title_activity_image_preview">ImagePreviewActivity</string>
     <string name="ticketsDialog">No. Tickets</string>
 
@@ -71,6 +76,7 @@
     <string name="title_activity_conclusion_detalle4_reporte">ConclusionDetalle4Reporte</string>
     <string name="title_activity_ingreso_reporte_evidencia">Captura de evidencia</string>
     <string name="title_activity_ingreso_reporte_datos">Captura de datos</string>
+
 
 
 </resources>

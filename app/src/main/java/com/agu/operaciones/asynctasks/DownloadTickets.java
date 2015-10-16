@@ -90,7 +90,7 @@ public class DownloadTickets extends AsyncTask<String, Integer, Integer> {
         SessionManager sm = new SessionManager(contexto);
         HashMap<String, String> hm = sm.getDetallesSession();
         String usuarioSup = hm.get(SessionManager.USUARIO);
-        paramEnvio.put("UsuarioSup", usuarioSup);
+        paramEnvio.put("UsuarioOp", usuarioSup);
         if (ticketsCursor.moveToFirst()) {
 
             do {
@@ -123,6 +123,7 @@ public class DownloadTickets extends AsyncTask<String, Integer, Integer> {
         ContentResolver cresolver = contexto.getContentResolver();
         Uri resultUri;
         Iterator it = ticket.keys();
+
         while (it.hasNext()) {
             String key = (String) it.next();
 
@@ -132,7 +133,7 @@ public class DownloadTickets extends AsyncTask<String, Integer, Integer> {
                     cv.putNull(key);
                 } else {
                     cv.put(key, ticket.getString(key));
-                    //Log.i(TAG+" inserta ticket", ticket.getString(key));
+                    Log.i(TAG+" inserta ticket", ticket.getString(key));
 
                 }
 
@@ -166,7 +167,7 @@ public class DownloadTickets extends AsyncTask<String, Integer, Integer> {
         SessionManager sm = new SessionManager(contexto);
         HashMap<String, String> hm = sm.getDetallesSession();
         String usuarioSup = hm.get(SessionManager.USUARIO);
-        logMe.add(new BasicNameValuePair("UsuarioSup", usuarioSup));
+        logMe.add(new BasicNameValuePair("UsuarioOp", usuarioSup));
 
         // *** OPERACION DE CONSULTA AL SERVICIO ***
         try {

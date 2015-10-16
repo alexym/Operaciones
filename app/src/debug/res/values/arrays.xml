@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="motivo">
+        <item>Accesorios de infraestructura</item>
+        <item>Apoyos logísticos para eventos públicos</item>
+        <item>Asesoría empresarial</item>
+        <item>Asistencia social</item>
+        <item>Bacheo</item>
+        <item>Balizamiento y/o pintura</item>
+        <item>Banquetas y/o guarniciones</item>
+        <item>Coladeras (colocación y/o mantenimiento)</item>
+        <item>Corte de raíz</item>
+        <item>Desazolve</item>
+        <item>Falta de agua</item>
+        <item>Fuga de agua</item>
+        <item>Limpieza de calles</item>
+        <item>Luminarias descompuestas</item>
+        <item>Luminarias faltantes</item>
+        <item>Mantenimiento a áreas verdes</item>
+        <item>Mantenimiento a edificios</item>
+        <item>Mantenimiento a puentes</item>
+        <item>Mantenimiento al alumbrado público</item>
+        <item>Poda de árboles</item>
+        <item>Protección civil</item>
+        <item>Recolección de basura</item>
+        <item>Recorridos turísticos</item>
+        <item>Reencarpetado</item>
+        <item>Retiro de ambulantes</item>
+        <item>Semáforos descompuestos</item>
+        <item>Señalización y/o nomenclatura</item>
+        <item>Suministro de agua</item>
+        <item>Verificaciones</item>
+        <item>Vigilancia policiaca</item>
+        <item>Obra Inconclusa</item>
+
+    </string-array>
+    <string-array name="dependencia">
+        <item>AUTORIDAD DEL CENTRO HISTÓRICO</item>
+        <item>AUTORIDAD DEL ESPACIO PÚBLICO</item>
+        <item>COMISIÓN FEDERAL DE ELECTRICIDAD</item>
+        <item>DELEGACIÓN ÁLVARO OBREGÓN</item>
+        <item>DELEGACIÓN AZCAPOTZALCO</item>
+        <item>DELEGACIÓN BENITO JUÁREZ</item>
+        <item>DELEGACIÓN COYOACÁN</item>
+        <item>DELEGACIÓN CUAJIMALPA</item>
+        <item>DELEGACIÓN CUAUHTÉMOC</item>
+        <item>DELEGACIÓN GUSTAVO A. MADERO</item>
+        <item>DELEGACIÓN IZTACALCO</item>
+        <item>DELEGACIÓN IZTAPALAPA</item>
+        <item>DELEGACIÓN MAGDALENA CONTRERAS</item>
+        <item>DELEGACIÓN MIGUEL HIDALGO</item>
+        <item>DELEGACIÓN MILPA ALTA</item>
+        <item>DELEGACIÓN TLÁHUAC</item>
+        <item>DELEGACIÓN TLALPAN</item>
+        <item>DELEGACIÓN VENUSTIANO CARRANZA</item>
+        <item>DELEGACIÓN XOCHIMILCO</item>
+        <item>FIBRA ÓPTICA</item>
+        <item>GAS NATURAL</item>
+        <item>INSTITUTO PARA LA SEGURIDAD DE LAS CONSTRUCCIONES</item>
+        <item>PROCURADURIA SOCIAL DEL D.F.</item>
+        <item>SECRETARIA DE CULTURA</item>
+        <item>SECRETARIA DE MEDIO AMBIENTE</item>
+        <item>SECRETARIA DE OBRAS Y SERVICIOS</item>
+        <item>SECRETARIA DE PROTECCIÓN CIVIL</item>
+        <item>SECRETARIA DE SEGURIDAD PÚBLICA</item>
+        <item>SECRETARIA DE TRANSPORTE Y VIALIDAD</item>
+        <item>SISTEMA DE AGUAS DE LA CIUDAD DE MÉXICO</item>
+        <item>SISTEMA DE TRANSPORTE COLECTIVO METRO</item>
+        <item>TELÉFONOS DE MÉXICO</item>
+    </string-array>
+    <string-array name="grupo">
+        <item>AGUA POTABLE Y SERVICIOS HIDRAULICOS</item>
+        <item>ASISTENCIA SOCIAL</item>
+        <item>COMERCIO INFORMAL Y TIANGUIS</item>
+        <item>CONSTRUCCIÓN DE OBRAS PÚBLICAS MAYORES</item>
+        <item>CULTURA Y RECREACIÓN</item>
+        <item>FOMENTO ECONÓMICO Y PROMOCIÓN AL EMPLEO</item>
+        <item>LIMPIA</item>
+        <item>MANTENIMIENTO A EDIFICIOS, INSTALACIONES PÚBLICAS Y UNIDADES HABITACIONALES</item>
+        <item>MEDIO AMBIENTE</item>
+        <item>PROTECCIÓN CIVIL</item>
+        <item>SEGURIDAD PÚBLICA Y VIALIDAD</item>
+        <item>SERVICIOS LEGALES</item>
+        <item>SERVICIOS URBANOS</item>
+        <item>TIERRA Y PREDIOS</item>
+        <item>VERIFICACIONES</item>
+    </string-array>
+    <string-array name="delegacion">
+        <item>Álvaro Obregón</item>
+        <item>Azcapotzalco</item>
+        <item>Benito Juárez</item>
+        <item>Coyoacán</item>
+        <item>Cuajimalpa</item>
+        <item>Cuauhtémoc</item>
+        <item>Gustavo A. Madero</item>
+        <item>Iztacalco</item>
+        <item>Iztapalapa</item>
+        <item>Magdalena Contreras</item>
+        <item>Miguel Hidalgo</item>
+        <item>Milpa Alta</item>
+        <item>Tláhuac</item>
+        <item>Tlalpan</item>
+        <item>Venustiano Carranza</item>
+        <item>Xochimilco</item>
+    </string-array>
+    <string-array name="sentido">
+        <item>NTE - OTE</item>
+        <item>NTE - PTE</item>
+        <item>NTE - SUR</item>
+        <item>OTE - NTE</item>
+        <item>OTE - SUR</item>
+        <item>OTE - PTE</item>
+        <item>PTE - NTE</item>
+        <item>PTE - OTE</item>
+        <item>PTE - SUR</item>
+        <item>SUR - NTE</item>
+        <item>SUR - OTE</item>
+        <item>SUR - PTE</item>
+    </string-array>
+    <string-array name="lugarFisico">
+        <item>ARROYO CENTRAL</item>
+        <item>ARROYO LATERAL</item>
+        <item>CONTRA FLUJO</item>
+        <item>BANQUETA</item>
+        <item>CAMELLÓN LATERAL</item>
+        <item>CAMELLÓN CENTRAL</item>
+        <item>PUENTE VEHICULAR</item>
+        <item>PUENTE PEATONAL</item>
+        <item>BAJO PUENTE</item>
+    </string-array>
+    <string-array name="localizado">
+        <item>Entre</item>
+        <item>Esquina</item>
+    </string-array>
+    <string-array name="prioridad">
+        <item>Programado</item>
+        <item>Proyecto</item>
+        <item>Urgente</item>
+
+
+    </string-array>
+    <string-array name="procede">
+        <item>Si</item>
+        <item>No</item>
+        <item>Atendido</item>
+        <item>Cancelado</item>
+
+    </string-array>
+    <string-array name="atendido">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="estadoOperacion">
+        <item>Atendido</item>
+    </string-array>
+    <string-array name="unidadMedida">
+        <item>No Aplica</item>
+        <item>g</item>
+        <item>kg</item>
+        <item>t</item>
+        <item>m</item>
+        <item>km</item>
+        <item>m2</item>
+    </string-array>
+
+</resources>

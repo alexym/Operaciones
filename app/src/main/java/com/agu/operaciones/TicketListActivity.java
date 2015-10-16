@@ -2,6 +2,7 @@ package com.agu.operaciones;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.LoaderManager;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.ContentResolver;
@@ -16,7 +17,6 @@ import android.database.SQLException;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.LoaderManager;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -49,9 +49,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -91,7 +89,7 @@ public class TicketListActivity extends AppCompatActivity implements LoaderManag
             getLoaderManager().initLoader(1, null, this);
 
         }
-        this.setTitle("Supervisor");
+        this.setTitle("Operaciones");
 
         //LLAMAMOS AL METODO QUE CREA EL INTENT
         handleIntent(getIntent());
@@ -122,7 +120,7 @@ public class TicketListActivity extends AppCompatActivity implements LoaderManag
                 String rowId = idTicketTV.getText().toString();
                 String product = numTicket.getText().toString();
 
-                if (etapaRow.equals(TicketMetaData.CONST_ETAPA_SUPERVISION)) {
+                if (etapaRow.equals(TicketMetaData.CONST_ETAPA_OPERACION)) {
                     Intent detail = new Intent(getApplicationContext(),
                             Detalle1Info.class);
                     detail.putExtra(TicketTable.KEY_EtapaSupervision, true);
@@ -132,20 +130,6 @@ public class TicketListActivity extends AppCompatActivity implements LoaderManag
 
                     startActivity(detail);
 
-                } else if (etapaRow
-                        .equals(TicketMetaData.CONST_ETAPA_CONCLUSION)) {
-//                    Intent conclusionI = new Intent(getApplicationContext(),
-//                            ConclusionDetalle1Info.class);
-//                    conclusionI.putExtra(TicketTable.KEY_Etapa, false);
-//                    conclusionI.putExtra(TicketTable.KEY_NumTicket, product);
-//                    conclusionI.putExtra(TicketTable.KEY_IdTicket, rowId);
-//                    startActivity(conclusionI);
-                } else if (etapaRow.equals(TicketMetaData.CONST_ETAPA_INGRESO)) {
-//                    Intent ingreso = new Intent(getApplicationContext(),
-//                            NuevoReporte1.class);
-//                    ingreso.putExtra(TicketTable.KEY_NumTicket, product);
-//                    ingreso.putExtra(TicketTable.KEY_IdTicket, Long.valueOf(rowId));
-//                    startActivity(ingreso);
                 }
 
 
@@ -218,27 +202,13 @@ public class TicketListActivity extends AppCompatActivity implements LoaderManag
                 tipoEtapa = cursor.getString(0);
                 numTicketSearch = cursor.getString(1);
             }
-            if (tipoEtapa.equals(TicketMetaData.CONST_ETAPA_SUPERVISION)) {
+            if (tipoEtapa.equals(TicketMetaData.CONST_ETAPA_OPERACION)) {
                 Intent detail = new Intent(getApplicationContext(),
                         Detalle1Info.class);
                 detail.putExtra(TicketTable.KEY_EtapaSupervision, true);
                 detail.putExtra(TicketTable.KEY_NumTicket, numTicketSearch);
                 detail.putExtra(TicketTable.KEY_IdTicket, id_uri.toString());
                 startActivity(detail);
-            }else if (tipoEtapa
-                    .equals(TicketMetaData.CONST_ETAPA_CONCLUSION)) {
-//                Intent conclusionI = new Intent(getApplicationContext(),
-//                        ConclusionDetalle1Info.class);
-//                conclusionI.putExtra(TicketTable.KEY_Etapa, false);
-//                conclusionI.putExtra(TicketTable.KEY_NumTicket, numTicketSearch);
-//                conclusionI.putExtra(TicketTable.KEY_IdTicket, id_uri.toString());
-//                startActivity(conclusionI);
-            } else if (tipoEtapa.equals(TicketMetaData.CONST_ETAPA_INGRESO)) {
-//                Intent i = new Intent(getApplicationContext(),
-//                        NuevoReporte1.class);
-//                i.putExtra(TicketTable.KEY_NumTicket, numTicketSearch);
-//                i.putExtra(TicketTable.KEY_IdTicket, id_uri);
-//                startActivity(i);
             }
         }else if(Intent.ACTION_SEARCH.equals(intent.getAction())){
             //Metodo que gestiona el boton buscar del teclado, de momento no es funcional
@@ -314,29 +284,6 @@ public class TicketListActivity extends AppCompatActivity implements LoaderManag
         dialogSincronizar.show();
     }
 
-
-    private Long registrarReporteDB(){
-        StringBuffer tempNumticket = new StringBuffer();
-        ContentValues cv = new ContentValues();
-        ContentResolver cr = TicketListActivity.this.getContentResolver();
-        Uri resultUri = null;
-        tempNumticket.append("t_");
-        SimpleDateFormat fechaFormater = new SimpleDateFormat("ddMMyyyyHHmmss");
-        Date hoy = new Date();
-        tempNumticket.append(fechaFormater.format(hoy));
-        nuevoNumTicket = tempNumticket.toString();
-        cv.put(TicketTable.KEY_NumTicket, nuevoNumTicket);
-        cv.put(TicketTable.KEY_Etapa, TicketMetaData.CONST_ETAPA_INGRESO);
-        cv.put(TicketTable.KEY_ComentarioSI,"");
-        cv.put(TicketTable.KEY_Sincronizado,TicketMetaData.CONST_SINCRONIZADO_AUN_NO);
-
-        resultUri = cr.insert(TicketTable.CONTENT_URI,cv);
-        Long id_ticket = ContentUris.parseId(resultUri);
-
-        return id_ticket;
-
-
-    }
 
 
     @Override
@@ -459,12 +406,13 @@ public class TicketListActivity extends AppCompatActivity implements LoaderManag
 
                 List<NameValuePair> reporte = new ArrayList<NameValuePair>();
                 HashMap<String, String> valoresSesion = sm.getDetallesSession();
-                reporte.add(new BasicNameValuePair(SessionManager.IDSUP,
-                        valoresSesion.get(SessionManager.IDSUP)));
+                //reporte.add(new BasicNameValuePair(SessionManager.IDSUP,
+                reporte.add(new BasicNameValuePair("IdOp",
+                        valoresSesion.get("IdOp")));
 
                 try {
-
                     JSONObject logoutData = DataWebservice.callService(DataWebservice.LOGOUT, reporte, "GET", _context);
+                    Log.i(TAG,logoutData.toString());
                     if (logoutData.getString("Error").equals("true")) {
                         respuesta = RESPUESTA_ERROR;
                         mensajeError = logoutData.getString("ErrorMsg");

@@ -27,9 +27,10 @@ public class TicketMetaData {
 	 * Constantes de webservice
 	 */
 
-    public static final String CONST_ETAPA_SUPERVISION = "Supervisión";
-    public static final String CONST_ETAPA_CONCLUSION = "Concluido";
-    public static final String CONST_ETAPA_INGRESO = "Ingreso";
+//    public static final String CONST_ETAPA_SUPERVISION = "Supervisión";
+//    public static final String CONST_ETAPA_CONCLUSION = "Concluido";
+//    public static final String CONST_ETAPA_INGRESO = "Ingreso";
+    public static final String CONST_ETAPA_OPERACION = "Operación";
 
     /*
      * Constante nombre SharedPreferences
@@ -145,5 +146,6 @@ public class TicketMetaData {
         public static final String KEY_Procede = "Procede";
         public static final String KEY_EstadoTicket = "EstadoTicket";
         public static final String KEY_EtapaSupervision = "";
+        public static final String KEY_UDeMedida = "UDeMedida";
     }
 }

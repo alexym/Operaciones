@@ -32,6 +32,7 @@ public class TicketContentProvider extends ContentProvider {
         ticketsProjectionMap = new HashMap<String, String>();
         ticketsProjectionMap.put(TicketMetaData.TicketTable.KEY_ROWID,TicketTable.KEY_ROWID);
         ticketsProjectionMap.put(TicketTable.KEY_Tramo,TicketTable.KEY_Tramo);
+        ticketsProjectionMap.put(TicketTable.KEY_UDeMedida,TicketTable.KEY_UDeMedida);
         ticketsProjectionMap.put(TicketTable.KEY_TipoAvenida,TicketTable.KEY_TipoAvenida);
         ticketsProjectionMap.put(TicketTable.KEY_Servicio,TicketTable.KEY_Servicio);
         ticketsProjectionMap.put(TicketTable.KEY_Sentido,TicketTable.KEY_Sentido);

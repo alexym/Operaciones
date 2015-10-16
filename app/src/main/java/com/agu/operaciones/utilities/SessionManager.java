@@ -21,7 +21,7 @@ public class SessionManager {
     private final String PREFERENCES_FILE = "SessionPreferences";
     //llave con la que se referencia si esta autenticado el usuario
     private final String ESTADO_SESSION = "autenticado";
-    public static final String USUARIO = "UsuarioSup";
+    public static final String USUARIO = "UsuarioOp";
     public static final String NOMBRE = "NomSup";
     public static final String IDSUP = "IdSup";
     public static final String IDTEL = "IdTelefono";

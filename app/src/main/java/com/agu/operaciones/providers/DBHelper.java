@@ -21,6 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
                     + TicketMetaData.TicketTable.KEY_ROWID + " integer primary key autoincrement, "
                     + TicketMetaData.TicketTable.KEY_NumTicket + " text , "
                     + TicketMetaData.TicketTable.KEY_Materiales + " text default '', "
+                    + TicketMetaData.TicketTable.KEY_UDeMedida + " text default '', "
                     + TicketMetaData.TicketTable.KEY_Motivo + " text, "
                     + TicketMetaData.TicketTable.KEY_LugarFisico + " text default '', "
                     + TicketMetaData.TicketTable.KEY_Latitud + " text, "

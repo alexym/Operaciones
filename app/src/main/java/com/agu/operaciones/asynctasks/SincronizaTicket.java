@@ -149,16 +149,16 @@ public class SincronizaTicket extends AsyncTask<String,Integer,Boolean> {
         String preTicket = "";
 
 
-        if (etapa.equals(TicketMetaData.CONST_ETAPA_CONCLUSION)) {
-            fileCamera = new FileCameraManager(activity, numTicket,FileCameraManager.path_supervisor);
-            etapaKey = DataWebservice.IMAGE_CONCL;
-            preTicket = "sf";
-
-        }else{
+//        if (etapa.equals(TicketMetaData.CONST_ETAPA_CONCLUSION)) {
+//            fileCamera = new FileCameraManager(activity, numTicket,FileCameraManager.path_supervisor);
+//            etapaKey = DataWebservice.IMAGE_CONCL;
+//            preTicket = "sf";
+//
+//        }else{
             fileCamera = new FileCameraManager(activity,numTicket,FileCameraManager.path_supervisor);
             etapaKey = DataWebservice.IMAGE_SUP;
             preTicket = "sf";
-        }
+//        }
 
 
         pathTicket = fileCamera.path;

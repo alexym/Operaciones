@@ -8,6 +8,8 @@ import android.util.Log;
 import com.agu.operaciones.SplashActivity;
 import com.agu.operaciones.utilities.NoInternetException;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.client.utils.URLEncodedUtils;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -29,9 +31,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.json.JSONObject;
 
 /**
  * Created by Cloudco on 14/10/15.
@@ -47,6 +46,7 @@ public class DataWebservice {
     public static final String REPORTE = "REPORTE";
     public static final String IMAGE_SUP = "IMAGE_SUPERVISION";
     public static final String IMAGE_CONCL = "IMAGE_CONCLUSION";
+    public static final String IMAGE_OPERACION = "IMAGE_OPERACION";
     public static final String TOKEN = "TOKEN";
     public static final String SUPERVISOR = "SUPERVISOR";
     public static final String SINCRONIZAR = "SINCRONIZAR";
@@ -57,6 +57,7 @@ public class DataWebservice {
     public static final String SMINSTICKET = "SMINSTICKET";
     public static final String URLCUSTOMSUPINI = "URLCUSTOMSUPINIC";
     public static final String URLCUSTOMSUPFIN = "URLCUSTOMSUPIFIN";
+    public static final String URLCUSTOMOPERACION = "URLCUSTOMOPERACION";
 
     public static String params;
 
@@ -122,19 +123,22 @@ public class DataWebservice {
 
             urlMap.put(TOKEN,
                     "https://cs19.salesforce.com/services/oauth2/token");
+
             urlMap.put(SUPERVISOR,
-                    " https://cs19.salesforce.com/services/apexrest/SMLogIn");
+                    "https://cs19.salesforce.com/services/apexrest/OMLogIn");
             urlMap.put(VALIDARSINC,
-                    "https://cs19.salesforce.com/services/apexrest/SMValidaSinc");
+                    "https://cs19.salesforce.com/services/apexrest/OMValidaSinc");
             urlMap.put(DIRECCIONES,
-                    "https://cs19.salesforce.com/services/apexrest/SMDirecciones");
+                    "https://cs19.salesforce.com/services/apexrest/OMDirecciones");
             urlMap.put(SINCRONIZAR,
-                    "https://cs19.salesforce.com/services/apexrest/SMSincroniza");
+                    "https://cs19.salesforce.com/services/apexrest/OMSincroniza");
+            urlMap.put(SINCRONIZAR,
+                    "https://cs19.salesforce.com/services/apexrest/OMSincroniza");
             urlMap.put(LOGOUT,
-                    "https://cs19.salesforce.com/services/apexrest/SMLogOut");
-            urlMap.put(SMACTTICKET,"https://cs19.salesforce.com/services/apexrest/SMActTicket");
+                    "https://cs19.salesforce.com/services/apexrest/OMLogOut");
+            urlMap.put(SMACTTICKET,"https://cs19.salesforce.com/services/apexrest/OMActTicket");
             urlMap.put(SMINSTICKET,
-                    "https://cs19.salesforce.com/services/apexrest/SMInsTicket");
+                    "https://cs19.salesforce.com/services/apexrest/OMInsTicket");
 
 
             // IPANTIGUA 189.254.14.169
@@ -142,10 +146,13 @@ public class DataWebservice {
                     "http://simgweb.072cdmx.gob.mx/supmovil/uploadSupervision.php");
             urlMap.put(IMAGE_CONCL,
                     "http://simgweb.072cdmx.gob.mx/supmovil/uploadConclusion.php");
+            urlMap.put(IMAGE_OPERACION,
+                    "http://simgweb.072cdmx.gob.mx/imagen/uploadOperacion.php");
             urlMap.put(URLCUSTOMSUPINI,
                     "http://simgweb.072cdmx.gob.mx/supmovil/Supervisi%C3%B3n%20inicial/");
-            urlMap.put(URLCUSTOMSUPFIN,
-                    "http://simgweb.072cdmx.gob.mx/supmovil/Supervisi%C3%B3n%20final/");
+
+            urlMap.put(URLCUSTOMOPERACION,
+                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/Operaci%C3%B3n/SOBSE/");
 
         } else {
 

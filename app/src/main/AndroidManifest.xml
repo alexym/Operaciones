@@ -22,7 +22,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <provider
-            android:name="com.agu.operaciones.providers.TicketContentProvider"
+            android:name=".providers.TicketContentProvider"
             android:authorities="com.agu.operaciones"
             android:multiprocess="true" >
         </provider>
@@ -30,15 +30,16 @@
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
+            android:label="@string/title_activity_login" >
         </activity>
         <activity
             android:name=".TicketListActivity"
@@ -47,6 +48,26 @@
         <activity
             android:name=".Detalle1Info"
             android:label="@string/title_activity_detalle1_info" >
+        </activity>
+        <activity
+            android:name=".ImagePreviewActivity"
+            android:label="@string/title_activity_image_preview" >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapaActivity"
+            android:label="@string/title_activity_mapa" >
+        </activity>
+        <activity
+            android:name=".Detalle3Reporte"
+            android:label="@string/title_activity_detalle3_reporte" >
         </activity>
     </application>
 

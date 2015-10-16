@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -32,6 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
+    private final String TAG = "LoginActivity";
     private EditText txtUsuario, txtPassword;
     private TextView softwareVersionTextV;
 
@@ -184,7 +186,7 @@ public class LoginActivity extends AppCompatActivity {
 
             // Objeto de parametros de envio al servicio de autenticación
             List<NameValuePair> logMe = new ArrayList<NameValuePair>();
-            logMe.add(new BasicNameValuePair("UsuarioSup", usuario));
+            logMe.add(new BasicNameValuePair("UsuarioOp", usuario));
             logMe.add(new BasicNameValuePair("Password", contrasena));
 
             try {
@@ -202,6 +204,7 @@ public class LoginActivity extends AppCompatActivity {
                     horaInicio = usuarioData.getString(SessionManager.HORAINICIO);
                     cuadrilla = usuarioData.getString(SessionManager.CUADRILLA);
                     respuesta = RESPUESTA_EXITOSA;
+                    Log.i(TAG, usuarioData.toString());
                     mensajeError = usuarioData.getString("ErrorMsg");
                 } else {
                     mensajeError = usuarioData.getString("ErrorMsg");
