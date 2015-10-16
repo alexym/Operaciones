@@ -130,8 +130,7 @@ public class DataWebservice {
                     "https://cs19.salesforce.com/services/apexrest/OMValidaSinc");
             urlMap.put(DIRECCIONES,
                     "https://cs19.salesforce.com/services/apexrest/OMDirecciones");
-            urlMap.put(SINCRONIZAR,
-                    "https://cs19.salesforce.com/services/apexrest/OMSincroniza");
+
             urlMap.put(SINCRONIZAR,
                     "https://cs19.salesforce.com/services/apexrest/OMSincroniza");
             urlMap.put(LOGOUT,
@@ -142,17 +141,19 @@ public class DataWebservice {
 
 
             // IPANTIGUA 189.254.14.169
-            urlMap.put(IMAGE_SUP,
-                    "http://simgweb.072cdmx.gob.mx/supmovil/uploadSupervision.php");
-            urlMap.put(IMAGE_CONCL,
-                    "http://simgweb.072cdmx.gob.mx/supmovil/uploadConclusion.php");
-            urlMap.put(IMAGE_OPERACION,
-                    "http://simgweb.072cdmx.gob.mx/imagen/uploadOperacion.php");
-            urlMap.put(URLCUSTOMSUPINI,
-                    "http://simgweb.072cdmx.gob.mx/supmovil/Supervisi%C3%B3n%20inicial/");
+//            urlMap.put(IMAGE_SUP,
+//                    "http://simgweb.072cdmx.gob.mx/supmovil/uploadSupervision.php");
 
+//
+//            urlMap.put(URLCUSTOMSUPINI,
+//                    "http://simgweb.072cdmx.gob.mx/supmovil/Supervisi%C3%B3n%20inicial/");
+//            urlMap.put(IMAGE_OPERACION,
+//                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/Operaci%C3%B3n/uploadOperacion.php");
+            urlMap.put(IMAGE_OPERACION,
+                    "http://simgweb.072cdmx.gob.mx/supmovil/uploadOperacion.php");
             urlMap.put(URLCUSTOMOPERACION,
-                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/Operaci%C3%B3n/SOBSE/");
+                    "http://simgweb.072cdmx.gob.mx/supmovil//Operaci%C3%B3n/");
+//                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/Operaci%C3%B3n/SOBSE/");
 
         } else {
 
@@ -617,12 +618,12 @@ public class DataWebservice {
                 resp = readResponseUploadImage(conn);
 
                 if (serverResponseCode == 200) {
-                    Log.i("subida correctament", resp + "- -"
+                    Log.i(TAG, resp + "- -"
                             + serverResponseMessage);
 
                 } else {
                     Log.i("fallo envio de imagen", "fallo");
-                    resp = "Fallo la conexion de la subida de imagen";
+                    resp = "Fallo la conexion de la subida de imagen  el serverresponsecode"+serverResponseCode;
                 }
 
                 // close the streams //
@@ -651,3 +652,5 @@ public class DataWebservice {
         } // End else block
     }
 }
+
+//<br /><b>Warning</b>:  Unknown: failed to open stream: No such file or directory in <b>Unknown</b> on line <b>0</b><br /><br /><b>Fatal error</b>:  Unknown: Failed opening required 'D:/xampp/htdocs/imagen/AGENCIA DE GESTIÓN URBANA/Operación/uploadOperacion.php' (include_path='.;D:\xampp\php\PEAR') in <b>Unknown</b> on line <b>0</b><br />- -OK

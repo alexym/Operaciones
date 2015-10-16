@@ -408,7 +408,8 @@ public class TicketListActivity extends AppCompatActivity implements LoaderManag
                 HashMap<String, String> valoresSesion = sm.getDetallesSession();
                 //reporte.add(new BasicNameValuePair(SessionManager.IDSUP,
                 reporte.add(new BasicNameValuePair("IdOp",
-                        valoresSesion.get("IdOp")));
+                        valoresSesion.get("IdSup")));
+                Log.i(TAG,reporte.toString());
 
                 try {
                     JSONObject logoutData = DataWebservice.callService(DataWebservice.LOGOUT, reporte, "GET", _context);
@@ -423,12 +424,10 @@ public class TicketListActivity extends AppCompatActivity implements LoaderManag
                     }
 
                 } catch (JSONException e) {
-                    // TODO Auto-generated catch block
                     Log.e(TAG,"TicketsActivity.LogoutCallService->doInBackground Error al parsear JSON " + e.getMessage());
                     respuesta = RESPUESTA_ERROR;
                     e.printStackTrace();
                 } catch (NoInternetException nie) {
-                    // TODO Auto-generated catch block
                     nie.printStackTrace();
                     respuesta = RESPUESTA_ERROR;
                     mensajeError = nie.getMessage();
@@ -537,7 +536,7 @@ public class TicketListActivity extends AppCompatActivity implements LoaderManag
             SessionManager sm = new SessionManager(TicketListActivity.this);
             HashMap<String, String> hm = sm.getDetallesSession();
             String usuarioSup = hm.get(SessionManager.USUARIO);
-            ticketParams.add(new BasicNameValuePair("UsuarioSup", usuarioSup));
+            ticketParams.add(new BasicNameValuePair("UsuarioOp", usuarioSup));
             ticketParams.add(new BasicNameValuePair("Ticket", numTicket));
 
             // *** OPERACION DE CONSULTA AL SERVICIO ***

@@ -31,12 +31,12 @@ public class SpinnersSupervisionNoEditable extends Fragment {
     private static final String ARG_PARAM4 = "param4";
 
     // TODO: Rename and change types of parameters
-    private String prioridad;
-    private String procede;
-    private String atendido;
-    private String etapa;
+    private String statusOperacion = "";
+    private String materiales = "";
+    private String cantidad = "";
+    private String unidadesMedida = "";
 
-    private TextView prioridad_tv,procede_tv,prioridadTitulo_tv,procedeTitulo_tv;
+    private TextView statusOperacion_tv, materiales_tv, cantidad_tv, unidadesMedida_tv;
 
     private OnFragmentInteractionListener mListener;
 
@@ -49,7 +49,7 @@ public class SpinnersSupervisionNoEditable extends Fragment {
      * @return A new instance of fragment SpinnersSupervisionNoEditable.
      */
     // TODO: Rename and change types and number of parameters
-    public static SpinnersSupervisionNoEditable newInstance(String param1, String param2, String param3,String param4) {
+    public static SpinnersSupervisionNoEditable newInstance(String param1, String param2, String param3, String param4) {
         SpinnersSupervisionNoEditable fragment = new SpinnersSupervisionNoEditable();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -68,10 +68,10 @@ public class SpinnersSupervisionNoEditable extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            prioridad   = getArguments().getString(ARG_PARAM1);
-            procede     = getArguments().getString(ARG_PARAM2);
-            atendido    = getArguments().getString(ARG_PARAM3);
-            etapa       = getArguments().getString(ARG_PARAM4);
+            statusOperacion = getArguments().getString(ARG_PARAM1);
+            materiales = getArguments().getString(ARG_PARAM2);
+            cantidad = getArguments().getString(ARG_PARAM3);
+            unidadesMedida = getArguments().getString(ARG_PARAM4);
         }
     }
 
@@ -125,24 +125,17 @@ public class SpinnersSupervisionNoEditable extends Fragment {
         // TODO: Update argument type and name
         public void onFragmentInteractionSpinnerNoEdit(Uri uri);
     }
-    public void initUI(View v){
-        prioridad_tv    = (TextView) v.findViewById(R.id.prioridad_TextView_noedit);
-        procede_tv      = (TextView) v.findViewById(R.id.procedeAtendido_TextView);
 
+    public void initUI(View v) {
+        statusOperacion_tv = (TextView) v.findViewById(R.id.estadoOp_tv);
+        materiales_tv = (TextView) v.findViewById(R.id.materiales_tv);
+        cantidad_tv = (TextView) v.findViewById(R.id.cantidad_tv);
+        unidadesMedida_tv = (TextView) v.findViewById(R.id.unidad_medida_tv);
 
-        if(atendido.equals("")){
-            prioridad_tv.setText(prioridad);
-            procede_tv.setText(procede);
-        }else{
-            prioridadTitulo_tv = (TextView) v.findViewById(R.id.tituloPrioridad_textView_no_edit);
-            procedeTitulo_tv = (TextView) v.findViewById(R.id.tituloProcedeAtendido_TextView_no_edit);
-            procede_tv.setText(atendido);
-            procedeTitulo_tv.setText("Atendido");
-            prioridadTitulo_tv.setVisibility(TextView.INVISIBLE);
-
-        }
-
-
+        statusOperacion_tv.setText(statusOperacion);
+        materiales_tv.setText(materiales);
+        cantidad_tv.setText(cantidad);
+        unidadesMedida_tv.setText(unidadesMedida);
 
     }
 

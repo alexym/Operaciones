@@ -43,15 +43,25 @@
         </activity>
         <activity
             android:name=".TicketListActivity"
-            android:label="@string/title_activity_ticket_list" >
+            android:label="@string/title_activity_ticket_list"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
         <activity
             android:name=".Detalle1Info"
-            android:label="@string/title_activity_detalle1_info" >
+            android:label="@string/title_activity_detalle1_info"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".ImagePreviewActivity"
-            android:label="@string/title_activity_image_preview" >
+            android:label="@string/title_activity_image_preview"
+            android:screenOrientation="portrait" >
         </activity>
 
         <meta-data
@@ -63,11 +73,13 @@
 
         <activity
             android:name=".MapaActivity"
-            android:label="@string/title_activity_mapa" >
+            android:label="@string/title_activity_mapa"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Detalle3Reporte"
-            android:label="@string/title_activity_detalle3_reporte" >
+            android:label="@string/title_activity_detalle3_reporte"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

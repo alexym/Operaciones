@@ -133,7 +133,7 @@ public class Detalle3Reporte extends ActionBarActivity implements FotosYComentar
         cresolver = Detalle3Reporte.this.getContentResolver();
         uriBase = ContentUris.withAppendedId(TicketTable.CONTENT_URI, row_id);
             /*
-			 * OPERACION DE VALIDACION DE TICKETS DESCARGADOS
+             * OPERACION DE VALIDACION DE TICKETS DESCARGADOS
 			 */
         String[] projection = {TicketTable.KEY_ComentariosOp, TicketTable.KEY_lImgSI, TicketTable.KEY_EstatusOp, TicketTable.KEY_Materiales, TicketTable.KEY_Cantidad, TicketTable.KEY_UDeMedida};
         Uri uriBase = ContentUris.withAppendedId(TicketTable.CONTENT_URI, row_id);
@@ -163,7 +163,6 @@ public class Detalle3Reporte extends ActionBarActivity implements FotosYComentar
                 }
 
             } catch (JSONException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
                 Log.i(TAG, "error con jsonObject al obtener imagenes enviadas" +
                         e.getMessage());
@@ -222,6 +221,9 @@ public class Detalle3Reporte extends ActionBarActivity implements FotosYComentar
 
         }
         siguiente = (Button) findViewById(R.id.siguienteBtn_conclusion);
+        if(estadoSincronizado.equals(TicketMetaData.CONST_SINCRONIZADO_SI)){
+            siguiente.setBackground(getDrawable(R.drawable.btn_inicio));
+        }
         atrasButton = (Button) findViewById(R.id.backbutton_reporte_conclusion);
         subtituloText = (TextView) findViewById(R.id.tituloNumTicket4);
         subtituloText.setText("Ticket: " + numTicket);
@@ -603,7 +605,9 @@ public class Detalle3Reporte extends ActionBarActivity implements FotosYComentar
                 JSONObject currentObj = new JSONObject(objImg.getString(llaves
                         .get(i)));
                 img.put("FechaHora", fecha);
+                //Todo aqui----------------------------------------------------
                 img.put("Img", urlCustom + url);
+                //img.put("Img", "hola soy una url de  imagen");
                 img.put("Latitud", currentObj.getDouble(TicketMetaData.LATITUD));
                 img.put("Longitud",
                         currentObj.getDouble(TicketMetaData.LONGITUD));
@@ -714,5 +718,31 @@ public class Detalle3Reporte extends ActionBarActivity implements FotosYComentar
 
     }
 
+//    {
+//        "Tickets":{
+//                "IdTicket":"5001300000oqzJaAAI",
+//                "EstatusOp":"Atendido",
+//                "ComentariosOp":"prueba",
+//                "Materiales":"maderozo",
+//                "Cantidad":"1",
+//                "UDeMedida":"gr",
+//                "lImgs":[
+                    //        {
+                    //            "Longitud":"-99.05841842",
+                    //                "Latitud":"19.46467636",
+                    //                "Img":"https://assets-cdn.github.com/images/modules/logos_page/Octocat.png",
+                    //                "FechaHora":"2015-06-26 00:04:29"
+                    //        },
+                    //        {
+                    //            "Longitud":"-99.05819014",
+                    //                "Latitud":"19.46514425",
+                    //                "Img":"http://i.stack.imgur.com/oaWJU.png",
+                    //                "FechaHora":"2015-06-26 00:04:27"
+                    //        }
+                //        ]
+        //    }
+//    }
+
 
 }
+

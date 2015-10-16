@@ -99,39 +99,15 @@ public class ActualizaTicket extends AsyncTask<JSONObject , String, Integer> {
         JSONObject reporte = new JSONObject();
         JSONObject completo = new JSONObject();
         JSONArray lista = new JSONArray();
-        String etapa = ticketCursor.getString(ticketCursor.getColumnIndex(TicketMetaData.TicketTable.KEY_Etapa));
-// Todo editar los parametros a enviar en el ticket
-//        if(etapa.equals(TicketMetaData.CONST_ETAPA_SUPERVISION))
-//        {
-//            reporte.put("Procede",ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_Procede)));
-//            Log.d("Prioridad seleccionada:", " " + ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_PrioridadSI)));
-//            reporte.put("PrioridadSI", ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_PrioridadSI)));
-//            reporte.put(TicketTable.KEY_Area, params.getString(TicketTable.KEY_Area));
-//            reporte.put("DirArea", params.getString(TicketTable.KEY_DirArea));
-//            reporte.put("DirGral", params.getString(TicketTable.KEY_DirGral));
-//            reporte.put("GpoServicios", params.getString(TicketTable.KEY_GrupoServicios));
-//            reporte.put("Servicio", params.getString(TicketTable.KEY_Servicio));
-//
-//        }else if(etapa.equals(TicketMetaData.CONST_ETAPA_CONCLUSION)){
-//
-//
-//            reporte.put("Procede", "Si");
-//            reporte.put("PrioridadSI", "Programado");
-//            reporte.put(TicketTable.KEY_Area, ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_Area)));
-//            reporte.put("DirArea", ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_DirArea)));
-//            reporte.put("DirGral", ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_DirGral)));
-//            reporte.put("GpoServicios", ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_GrupoServicios)));
-//            reporte.put("Servicio", ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_Servicio)));
-//        }else{
-//            Log.e(TAG,"ActualizaTicket .> doInBackground ETAPA DESCONOCIDA ");
-//        }
 
-        reporte.put(TicketTable.KEY_atendido, ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_atendido)));
-        reporte.put("ComentariosSF",ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_ComentariosSF)));
-        reporte.put("ComentariosSI", ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_ComentarioSI)));
-        reporte.put("Etapa", ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_Etapa)));
+        reporte.put("ComentariosOp",ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_ComentariosOp)));
+        reporte.put("EstatusOp",ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_EstatusOp)));
+        reporte.put("Materiales",ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_Materiales)));
+        reporte.put("Cantidad",ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_Cantidad)));
+        reporte.put("UDeMedida",ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_UDeMedida)));
+
         reporte.put("IdTicket", ticketCursor.getString(ticketCursor.getColumnIndex(TicketTable.KEY_IdTicket)));
-        reporte.put(TicketTable.KEY_Sincronizado, TicketMetaData.CONST_SINCRONIZADO_SI);
+
 			    /*
 			     * HAY QUE ESTANDARIZAR LOS NOMBRES DE LOS CAMPOS  DE LA Imagen
 			     */
@@ -194,8 +170,7 @@ public class ActualizaTicket extends AsyncTask<JSONObject , String, Integer> {
         cresolver = activity.getContentResolver();
         try{
             uriBase = ContentUris.withAppendedId(TicketTable.CONTENT_URI, params_id.getInt(TicketTable.KEY_ROWID));
-            //ticketCursor = dbAdapter.obtenerTicket(new String[]{"*"}, TicketTable.KEY_NumTicket, params.getString(TicketTable.KEY_NumTicket));
-            //String[] projection = {"*"};
+
             ticketCursor = cresolver.query(
                     uriBase,
                     null,
