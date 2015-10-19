@@ -152,7 +152,7 @@
         <item>No</item>
     </string-array>
     <string-array name="estadoOperacion">
-        <item>Atendido</item>
+        <item>Atendido (+)</item>
     </string-array>
     <string-array name="unidadMedida">
         <item>No Aplica</item>

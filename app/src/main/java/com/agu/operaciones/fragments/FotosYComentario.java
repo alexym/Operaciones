@@ -189,6 +189,8 @@ public class FotosYComentario extends Fragment {
             descripcionEditText.setText("");
         }else{
             descripcionEditText.setText(mParam2);
+            bundle.putString(COMENTVAL,mParam2);
+            mListener.onFragmentInteraction(bundle);
         }
 
 

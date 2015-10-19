@@ -103,6 +103,7 @@ public class Detalle1Info extends AppCompatActivity implements View.OnClickListe
                         .getColumnIndex(TicketTable.KEY_ComentarioSI));
                 String comentariosOp = ticketsCursor.getString(ticketsCursor
                         .getColumnIndex(TicketTable.KEY_ComentariosOp));
+
                 String tramo = ticketsCursor.getString(ticketsCursor
                         .getColumnIndex(TicketTable.KEY_Tramo));
                 String sincronizado = ticketsCursor.getString(ticketsCursor
@@ -112,10 +113,23 @@ public class Detalle1Info extends AppCompatActivity implements View.OnClickListe
                 String procede = ticketsCursor.getString(ticketsCursor
                         .getColumnIndex(TicketTable.KEY_Procede));
 
-                //ticketsCursor.close();
+                String dirGral = ticketsCursor.getString(ticketsCursor
+                        .getColumnIndex(TicketTable.KEY_DirGral));
+                String dirArea = ticketsCursor.getString(ticketsCursor
+                        .getColumnIndex(TicketTable.KEY_DirArea));
+                String grupoServ = ticketsCursor.getString(ticketsCursor
+                        .getColumnIndex(TicketTable.KEY_GrupoServicios));
+                String servi = ticketsCursor.getString(ticketsCursor
+                        .getColumnIndex(TicketTable.KEY_Servicio));
+                String limgsi = ticketsCursor.getString(ticketsCursor
+                        .getColumnIndex(TicketTable.KEY_lImgSI));
 
+                //ticketsCursor.close();
+                  //Todo carga de info para detalle 2
+//                Intent i = new Intent(getApplicationContext(),
+//                        MapaActivity.class);
                 Intent i = new Intent(getApplicationContext(),
-                        MapaActivity.class);
+                        Detalle2Info.class);
                 // sending data to new activity
                 //
                 Bundle ticketParams = new Bundle();
@@ -130,10 +144,20 @@ public class Detalle1Info extends AppCompatActivity implements View.OnClickListe
                 ticketParams.putString(TicketTable.KEY_ComentariosOp,comentariosOp);
                 ticketParams.putString(TicketTable.KEY_Tramo, tramo);
                 ticketParams.putString(TicketTable.KEY_Sincronizado, sincronizado);
-                ticketParams.putBoolean("tipoEtapa", true);
+
                 //valores para verificacion inicial
                 ticketParams.putString(TicketTable.KEY_PrioridadSI, prioridadSI);
                 ticketParams.putString(TicketTable.KEY_Procede, procede);
+
+                // Activity ConclusionDetail2
+                ticketParams.putString(TicketTable.KEY_DirGral, dirGral);
+                ticketParams.putString(TicketTable.KEY_DirArea, dirArea);
+                ticketParams.putString(TicketTable.KEY_GrupoServicios,
+                        grupoServ);
+                ticketParams.putString(TicketTable.KEY_Servicio, servi);
+                ticketParams.putString(TicketTable.KEY_lImgSI, limgsi);
+
+
 
 
 
@@ -187,7 +211,14 @@ public class Detalle1Info extends AppCompatActivity implements View.OnClickListe
                     TicketTable.KEY_ImgIng2,TicketTable.KEY_ImgIng2,
                     TicketTable.KEY_ImgIng3,TicketTable.KEY_ImgIng3,
                     TicketTable.KEY_Sincronizado,TicketTable.KEY_PrioridadSI,
-                    TicketTable.KEY_Procede
+                    TicketTable.KEY_Procede,
+
+                    TicketTable.KEY_DirGral,
+                    TicketTable.KEY_DirArea,
+                    TicketTable.KEY_GrupoServicios,
+                    TicketTable.KEY_Servicio,
+                    TicketTable.KEY_ComentarioSI,
+                    TicketTable.KEY_lImgSI,
             };
 
             ticketsCursor = cresolver.query(uri,projection,null,null,null);
@@ -224,7 +255,7 @@ public class Detalle1Info extends AppCompatActivity implements View.OnClickListe
                                 @Override
                                 public void onClick(View v) {
                                     urlImage = imgIng1;
-                                    // TODO Auto-generated method stub
+
                                     Intent i = new Intent(getApplicationContext(),
                                             ImagePreviewActivity.class);
                                     i.putExtra("url",urlImage);
@@ -239,7 +270,7 @@ public class Detalle1Info extends AppCompatActivity implements View.OnClickListe
                             img2.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    // TODO Auto-generated method stub
+
                                     urlImage = imgIng2;
                                     Intent i = new Intent(getApplicationContext(),
                                             ImagePreviewActivity.class);
@@ -256,7 +287,6 @@ public class Detalle1Info extends AppCompatActivity implements View.OnClickListe
 
                                 @Override
                                 public void onClick(View v) {
-                                    // TODO Auto-generated method stub
                                     urlImage = imgIng3;
                                     Intent i = new Intent(getApplicationContext(),
                                             ImagePreviewActivity.class);

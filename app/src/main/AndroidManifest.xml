@@ -81,6 +81,10 @@
             android:label="@string/title_activity_detalle3_reporte"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name=".Detalle2Info"
+            android:label="@string/title_activity_detalle2_info" >
+        </activity>
     </application>
 
 </manifest>

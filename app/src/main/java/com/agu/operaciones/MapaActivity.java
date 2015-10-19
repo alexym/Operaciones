@@ -99,13 +99,10 @@ public class MapaActivity extends FragmentActivity implements LocationSource,
         //lat =19.367571;
         //lon = -99.16615;
         //BD
-        if(b.getBoolean("tipoEtapa")){
-            lat = b.getDouble(TicketTable.KEY_Latitud);
-            lon = b.getDouble(TicketTable.KEY_Longitud);
-        }else{
+
             lat = b.getDouble(TicketTable.KEY_LatitudInicial);
             lon = b.getDouble(TicketTable.KEY_LongitudInicial);
-        }
+
         Log.i("que trae la lat y long", "lat: " + lat + " " + "long:" + lon);
 
         objetivoLocation= new Location("a");

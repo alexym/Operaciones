@@ -58,6 +58,7 @@ public class Detalle3Reporte extends ActionBarActivity implements FotosYComentar
     private static final int CAMERA_REQUEST = 1888;
 
     public static final String TAG = "ReporteActivity";
+    public final String MATERIALES_TAG = "materiales";
 
 
     private FileCameraManager fileCamera;
@@ -177,6 +178,7 @@ public class Detalle3Reporte extends ActionBarActivity implements FotosYComentar
         validaciones = new HashMap<String, Boolean>();
         validaciones.put(TicketTable.KEY_ComentarioSI, false);
         validaciones.put(TicketTable.KEY_uploadImageResponse, false);
+        validaciones.put(MATERIALES_TAG, false);
         //Nueva validacion perteneciente al flujo de cancelado
         nuevaValidacion = new HashMap<String, Boolean>();
         nuevaValidacion.put(TicketTable.KEY_ComentarioSI, false);
@@ -262,6 +264,11 @@ public class Detalle3Reporte extends ActionBarActivity implements FotosYComentar
         materiales = bundle.getString(TicketTable.KEY_Materiales);
         cantidad = bundle.getString(TicketTable.KEY_Cantidad);
         unidadMedida = bundle.getString(TicketTable.KEY_UDeMedida);
+        if(materiales.length()>0){
+            validaciones.put(MATERIALES_TAG, true);
+        }else{
+            validaciones.put(MATERIALES_TAG, false);
+        }
         Log.i(TAG, "el spinner es" + estadoOperacion + " " + materiales + " " + cantidad + " " + unidadMedida);
     }
 
@@ -429,7 +436,7 @@ public class Detalle3Reporte extends ActionBarActivity implements FotosYComentar
 						 */
 
             if (validaciones.containsValue(false)) {
-                Toast.makeText(Detalle3Reporte.this, "Necesitas Ingresar un comentario y al menos una fotografia", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Detalle3Reporte.this, "Necesitas Ingresar un comentario, la cantidad de Material y al menos una fotografia", Toast.LENGTH_SHORT).show();
 
                 // entonces no esta validado
             } else {

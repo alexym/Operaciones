@@ -66,7 +66,7 @@ public class DataWebservice {
     static {
 
 		/*
-		 * Ambiente de Pruebas
+         * Ambiente de Pruebas
 		 */
 
         if (SplashActivity.MODO_DEBUG) {
@@ -135,7 +135,7 @@ public class DataWebservice {
                     "https://cs19.salesforce.com/services/apexrest/OMSincroniza");
             urlMap.put(LOGOUT,
                     "https://cs19.salesforce.com/services/apexrest/OMLogOut");
-            urlMap.put(SMACTTICKET,"https://cs19.salesforce.com/services/apexrest/OMActTicket");
+            urlMap.put(SMACTTICKET, "https://cs19.salesforce.com/services/apexrest/OMActTicket");
             urlMap.put(SMINSTICKET,
                     "https://cs19.salesforce.com/services/apexrest/OMInsTicket");
 
@@ -149,11 +149,13 @@ public class DataWebservice {
 //                    "http://simgweb.072cdmx.gob.mx/supmovil/Supervisi%C3%B3n%20inicial/");
 //            urlMap.put(IMAGE_OPERACION,
 //                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/Operaci%C3%B3n/uploadOperacion.php");
+            //urlMap.put(IMAGE_OPERACION,
+                    //"http://simgweb.072cdmx.gob.mx/imagen/uploadSupervision.php");
             urlMap.put(IMAGE_OPERACION,
-                    "http://simgweb.072cdmx.gob.mx/supmovil/uploadOperacion.php");
+                    "http://simgweb.072cdmx.gob.mx/imagen/uploadOperacion.php");
             urlMap.put(URLCUSTOMOPERACION,
-                    "http://simgweb.072cdmx.gob.mx/supmovil//Operaci%C3%B3n/");
-//                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/Operaci%C3%B3n/SOBSE/");
+                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/SECRETARIA%20DE%20OBRAS%20Y%20SERVICIOS");
+                    //"http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/");
 
         } else {
 
@@ -428,7 +430,7 @@ public class DataWebservice {
                     URL url = new URL(serv + "?" + paramString);
                     connection = (HttpsURLConnection) url.openConnection();
                     connection.setDoInput(true);
-                    connection.setRequestProperty("Authorization", "OAuth "+ accessToken);
+                    connection.setRequestProperty("Authorization", "OAuth " + accessToken);
                     connection.setRequestProperty("Content-Type",
                             "application/json;charset=UTF-8");
                     connection.setUseCaches(false);
@@ -623,7 +625,7 @@ public class DataWebservice {
 
                 } else {
                     Log.i("fallo envio de imagen", "fallo");
-                    resp = "Fallo la conexion de la subida de imagen  el serverresponsecode"+serverResponseCode;
+                    resp = "Fallo la conexion de la subida de imagen  el serverresponsecode" + serverResponseCode;
                 }
 
                 // close the streams //
