@@ -264,11 +264,15 @@ public class Detalle3Reporte extends ActionBarActivity implements FotosYComentar
         materiales = bundle.getString(TicketTable.KEY_Materiales);
         cantidad = bundle.getString(TicketTable.KEY_Cantidad);
         unidadMedida = bundle.getString(TicketTable.KEY_UDeMedida);
-        if(materiales.length()>0){
-            validaciones.put(MATERIALES_TAG, true);
-        }else{
-            validaciones.put(MATERIALES_TAG, false);
+        if(materiales == null) {
+            materiales = "";
         }
+            if (materiales.length() > 0) {
+                validaciones.put(MATERIALES_TAG, true);
+            } else {
+                validaciones.put(MATERIALES_TAG, false);
+            }
+
         Log.i(TAG, "el spinner es" + estadoOperacion + " " + materiales + " " + cantidad + " " + unidadMedida);
     }
 

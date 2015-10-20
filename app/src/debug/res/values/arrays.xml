@@ -155,12 +155,7 @@
         <item>Atendido (+)</item>
     </string-array>
     <string-array name="unidadMedida">
-        <item>No Aplica</item>
-        <item>g</item>
-        <item>kg</item>
-        <item>t</item>
         <item>m</item>
-        <item>km</item>
         <item>m2</item>
     </string-array>
 

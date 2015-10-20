@@ -68,6 +68,8 @@ public class MapaActivity extends FragmentActivity implements LocationSource,
         cGPS = new ConfiguracionGPS(contexto,true);
         mapa = ((MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
+//        mapa = ((SupportMapFragment) getSupportFragmentManager()
+//                .findFragmentById(R.id.map)).getMap();
         mapa.setMyLocationEnabled(true);
         rango= 100.0;
         b = this.getIntent().getExtras();
@@ -249,19 +251,15 @@ public class MapaActivity extends FragmentActivity implements LocationSource,
 
     @Override
     public void onProviderDisabled(String arg0) {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void onProviderEnabled(String arg0) {
-        // TODO Auto-generated method stub
-
     }
 
     @Override
     public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
-        // TODO Auto-generated method stub
 
     }
     @Override
@@ -281,8 +279,6 @@ public class MapaActivity extends FragmentActivity implements LocationSource,
 
     @Override
     public void onClick(View v) {
-        // TODO Auto-generated method stub
-
         super.onBackPressed();
 
     }

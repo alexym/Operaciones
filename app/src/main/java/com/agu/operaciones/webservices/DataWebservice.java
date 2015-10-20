@@ -154,11 +154,11 @@ public class DataWebservice {
             urlMap.put(IMAGE_OPERACION,
                     "http://simgweb.072cdmx.gob.mx/imagen/uploadOperacion.php");
             urlMap.put(URLCUSTOMOPERACION,
-                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/SECRETARIA%20DE%20OBRAS%20Y%20SERVICIOS");
+                    "http://simgweb.072cdmx.gob.mx/imagen/SECRETARIA%20DE%20OBRAS%20Y%20SERVICIOS/");
                     //"http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/");
 
         } else {
-
+            http://simgweb.072cdmx.gob.mx/imagen/SECRETARIA%20DE%20OBRAS%20Y%20SERVICIOS/op062015-165889-1.jpg
 			/*
 			 * Ambiente de Producción
 			 */
