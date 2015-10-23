@@ -71,55 +71,9 @@ public class DataWebservice {
 
         if (SplashActivity.MODO_DEBUG) {
 
-            // SANDBOX
-            // params =
-            // "grant_type=password&client_id=3MVG9dPGzpc3kWyfOCD.QECg8sdItLn2rN5njiSZrJtI3rMP2es6EwraFoW2UgcFdYUYqqivJtJg6RTIps49A&client_secret=1434304286937802337&username=darzola@grupoday.com.dev&password=davidmaar2014TJWvF0OFRVxqzX2v7zEPU5rdX";
-            // CAPACITA
-            // params =
-            // "grant_type=password&client_id=3MVG9dPGzpc3kWyfOCD.QECg8sdItLn2rN5njiSZrJtI3rMP2es6EwraFoW2UgcFdYUYqqivJtJg6RTIps49A&client_secret=1434304286937802337&username=darzola@grupoday.com.capacita&password=davidmaar20141zTmz8SUNe0Yn7XgEXfSwsntU";
-            // CONFIG
-            // params =
-            // "grant_type=password&client_id=3MVG9dPGzpc3kWyfOCD.QECg8sdItLn2rN5njiSZrJtI3rMP2es6EwraFoW2UgcFdYUYqqivJtJg6RTIps49A&client_secret=1434304286937802337&username=darzola@grupoday.com.config&password=davidmaar201453YeEPU2yPEMsigJGmgcVQNa";
-            // BACKCUPFULL
-            //params = "grant_type=password&client_id=3MVG9dPGzpc3kWyfOCD.QECg8sdItLn2rN5njiSZrJtI3rMP2es6EwraFoW2UgcFdYUYqqivJtJg6RTIps49A&client_secret=1434304286937802337&username=adminconfiguracion@agucdmx.gob.mx.backupfull&password=grupoday0141ayBeGgqgnj8n6gXACerxU1";
-            //params = "grant_type=password&client_id=3MVG99OxTyEMCQ3j1W8faf5mAqHImevYMg5eflaVYq27DG8riryIHpggEZZxLMUAE01vz_icavWX8vSpVCaus&client_secret=1110909413960982424&username=admin072movil@obrasdf.gob.mx&password=072movil2013aCVunihgEOWjjTV4Sp35MGjB";
             params = "grant_type=password&client_id=3MVG99OxTyEMCQ3j1W8faf5mAqHImevYMg5eflaVYq27DG8riryIHpggEZZxLMUAE01vz_icavWX8vSpVCaus&client_secret=1110909413960982424&username=adminconfiguracion@agucdmx.gob.mx.backupfull&password=grupoday01KKneBqdU9LKZeI1E9ObJCGDy";
 
             Log.i(TAG, params);
-			/*
-			 * urlMap.put(TOKEN,
-			 * "https://cs23.salesforce.com/services/oauth2/token");
-			 * urlMap.put(SUPERVISOR,
-			 * "https://cs23.salesforce.com/services/apexrest/SMLogIn");
-			 * urlMap.put(VALIDARSINC,
-			 * "https://cs23.salesforce.com/services/apexrest/SMValidaSinc");
-			 * urlMap.put(DIRECCIONES,
-			 * "https://cs23.salesforce.com/services/apexrest/SMDirecciones");
-			 * urlMap.put(SINCRONIZAR,
-			 * "https://cs23.salesforce.com/services/apexrest/SMSincroniza");
-			 * urlMap.put(LOGOUT,
-			 * "https://cs23.salesforce.com/services/apexrest/SMLogOut");
-			 * urlMap.put(SMACTTICKET,
-			 * "https://cs23.salesforce.com/services/apexrest/SMActTicket");
-			 * urlMap.put(SMINSTICKET,
-			 * "https://cs23.salesforce.com/services/apexrest/SMInsTicket");
-			 */
-
-			/*urlMap.put(TOKEN,
-					"https://cs24.salesforce.com/services/oauth2/token");
-			urlMap.put(SUPERVISOR,
-					" https://cs24.salesforce.com/services/apexrest/SMLogIn");
-			urlMap.put(VALIDARSINC,
-					"https://cs24.salesforce.com/services/apexrest/SMValidaSinc");
-			urlMap.put(DIRECCIONES,
-					"https://cs24.salesforce.com/services/apexrest/SMDirecciones");
-			urlMap.put(SINCRONIZAR,
-					"https://cs24.salesforce.com/services/apexrest/SMSincroniza");
-			urlMap.put(LOGOUT,
-					"https://cs24.salesforce.com/services/apexrest/SMLogOut");
-			urlMap.put(SMACTTICKET,"https://cs24.salesforce.com/services/apexrest/SMActTicket");
-			urlMap.put(SMINSTICKET,
-					"https://cs24.salesforce.com/services/apexrest/SMInsTicket");*/
 
             urlMap.put(TOKEN,
                     "https://cs19.salesforce.com/services/oauth2/token");
@@ -135,7 +89,8 @@ public class DataWebservice {
                     "https://cs19.salesforce.com/services/apexrest/OMSincroniza");
             urlMap.put(LOGOUT,
                     "https://cs19.salesforce.com/services/apexrest/OMLogOut");
-            urlMap.put(SMACTTICKET, "https://cs19.salesforce.com/services/apexrest/OMActTicket");
+            urlMap.put(SMACTTICKET,
+                    "https://cs19.salesforce.com/services/apexrest/OMActTicket");
             urlMap.put(SMINSTICKET,
                     "https://cs19.salesforce.com/services/apexrest/OMInsTicket");
 
@@ -149,12 +104,15 @@ public class DataWebservice {
 //                    "http://simgweb.072cdmx.gob.mx/supmovil/Supervisi%C3%B3n%20inicial/");
 //            urlMap.put(IMAGE_OPERACION,
 //                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/Operaci%C3%B3n/uploadOperacion.php");
-            //urlMap.put(IMAGE_OPERACION,
-                    //"http://simgweb.072cdmx.gob.mx/imagen/uploadSupervision.php");
             urlMap.put(IMAGE_OPERACION,
-                    "http://simgweb.072cdmx.gob.mx/imagen/uploadOperacion.php");
+                    "http://simgweb.072cdmx.gob.mx/supmovil/uploadOperacion.php");
             urlMap.put(URLCUSTOMOPERACION,
-                    "http://simgweb.072cdmx.gob.mx/imagen/SECRETARIA%20DE%20OBRAS%20Y%20SERVICIOS/");
+                "http://simgweb.072cdmx.gob.mx/supmovil/Operaci%C3%B3n/");
+                    //"http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/");
+//            urlMap.put(IMAGE_OPERACION,
+//                    "http://simgweb.072cdmx.gob.mx/imagen/uploadOperacion.php");
+//            urlMap.put(URLCUSTOMOPERACION,
+//                    "http://simgweb.072cdmx.gob.mx/imagen/SECRETARIA%20DE%20OBRAS%20Y%20SERVICIOS/");
                     //"http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/");
 
         } else {
@@ -163,32 +121,29 @@ public class DataWebservice {
 			 * Ambiente de Producción
 			 */
             params = "grant_type=password&client_id=3MVG99OxTyEMCQ3j1W8faf5mAqHImevYMg5eflaVYq27DG8riryIHpggEZZxLMUAE01vz_icavWX8vSpVCaus&client_secret=1110909413960982424&username=admin072movil@obrasdf.gob.mx&password=072movil2013aCVunihgEOWjjTV4Sp35MGjB";
+
             urlMap.put(TOKEN,
                     "https://na19.salesforce.com/services/oauth2/token");
             urlMap.put(SUPERVISOR,
-                    " https://na19.salesforce.com/services/apexrest/SMLogIn");
+                    " https://na19.salesforce.com/services/apexrest/OMLogIn");
             urlMap.put(VALIDARSINC,
-                    "https://na19.salesforce.com/services/apexrest/SMValidaSinc");
+                    "https://na19.salesforce.com/services/apexrest/OMValidaSinc");
             urlMap.put(DIRECCIONES,
-                    "https://na19.salesforce.com/services/apexrest/SMDirecciones");
+                    "https://na19.salesforce.com/services/apexrest/OMDirecciones");
             urlMap.put(SINCRONIZAR,
-                    "https://na19.salesforce.com/services/apexrest/SMSincroniza");
+                    "https://na19.salesforce.com/services/apexrest/OMSincroniza");
             urlMap.put(LOGOUT,
-                    "https://na19.salesforce.com/services/apexrest/SMLogOut");
+                    "https://na19.salesforce.com/services/apexrest/OMLogOut");
             urlMap.put(SMACTTICKET,
-                    "https://na19.salesforce.com/services/apexrest/SMActTicket");
+                    "https://na19.salesforce.com/services/apexrest/OMActTicket");
             urlMap.put(SMINSTICKET,
-                    "https://na19.salesforce.com/services/apexrest/SMInsTicket");
-            urlMap.put(IMAGE_SUP,
-                    "http://simgweb.072cdmx.gob.mx/imagen/uploadSupervision.php");
-            urlMap.put(IMAGE_CONCL,
-                    "http://simgweb.072cdmx.gob.mx/imagen/uploadConclusion.php");
-            urlMap.put(
-                    URLCUSTOMSUPINI,
-                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/Supervisi%C3%B3n%20inicial/");
-            urlMap.put(
-                    URLCUSTOMSUPFIN,
-                    "http://simgweb.072cdmx.gob.mx/imagen/AGENCIA%20DE%20GESTI%C3%93N%20URBANA/Supervisi%C3%B3n%20final/");
+                    "https://na19.salesforce.com/services/apexrest/OMInsTicket");
+
+            urlMap.put(IMAGE_OPERACION,
+                    "http://simgweb.072cdmx.gob.mx/imagen/uploadOperacion.php");
+            urlMap.put(URLCUSTOMOPERACION,
+                    "http://simgweb.072cdmx.gob.mx/imagen/SECRETARIA%20DE%20OBRAS%20Y%20SERVICIOS/");
+
 
         }
 
